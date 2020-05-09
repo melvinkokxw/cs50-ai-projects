@@ -138,7 +138,15 @@ def minimax(board):
 
     # For each possible action from state, call function to get expected value of utility
     for action in actions(board):
-        temp = expected_utility(result(board, action))
+        next_board = result(board, action)
+        if terminal(next_board):
+            if next_player is X and utility(next_board) is 1:
+                optimal_action = action
+                break
+            elif next_player is O and utility(next_board) is -1:
+                optimal_action = action
+                break
+        temp = expected_utility(next_board)
         if next_player is X and temp > value:
             value = temp
             optimal_action = action
