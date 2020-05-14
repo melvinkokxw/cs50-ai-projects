@@ -119,8 +119,8 @@ In summary, BFS is complete and optimal.
 
 *m*: maximum depth of the state space
 
-- | BFS | DFS
-- | ----|----
+&nbsp; | BFS | DFS
+------ | ----|----
 **Time complexity** | 1+*b*+*b*<sup>2</sup>+*b*<sup>2</sup>+...+*b*<sup>d</sup> = *O*(*b*<sup>*d*</sup>) | *O*(*b*<sup>*m*</sup>)
 **Space complexity** | *O*(*b*<sup>*d*</sup>) | *O*(*bm*)
 **Complete** | Yes | Yes
