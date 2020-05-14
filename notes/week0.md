@@ -157,3 +157,27 @@ When expanding nodes, it adds each child's path cost and heuristic value to rank
 
 Given the assumption that the heuristic function is admissible and consistent, A* Search is complete and optimal.
 
+# Minimax algorithm
+
+Minimax algorithm is used in an adversarial search situation, especially in deterministic games. An adversarial search situation is one where there is an opposing agent making choices against the primary agent. An example of such a situation is tic-tac-toe.
+
+The minimax algorithm assumes that the primary agent is trying to maximise the utility for himself while the opposing agent is trying to minimise the utility for the primary agent.
+
+## Implementation
+
+In addition to the [implementation of a basic search algorithm](#implementation), a minimax algorithm requires a few more things:
+
+* A function to determine the next player
+    * Takes an input as a state and returns whose turn is it
+* A utility function to determine how useful an outcome is for the player
+    * E.g. when playing tic-tac-toe as player "X", a terminal state where X wins will have higher utility than a draw, which in turn has a higher utility than a state where "O" wins.
+
+## Depth-limited minimax
+
+While it is possible to calculate the utility of all the terminal states in a tic-tac-toe game, in a more complex game such as chess, there are too many outcomes to calculate in a reasonable timespan. 
+
+One method to mitigate this is using a depth-limited search, whereby the algorithm only searches up to to a certain tree depth and if it hasn't reached a terminal state, then it uses an evaluation function to estimates the state's utility. 
+
+## Alpha-beta pruning
+
+[TODO]
