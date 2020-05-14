@@ -1,5 +1,23 @@
 # Week 0: Search
 
+- [Terminology](#terminology)
+- [Implementation](#implementation)
+- [Search algorithm](#search-algorithm)
+- [Uninformed search algorithms](#uninformed-search-algorithms)
+  * [DFS](#dfs)
+  * [BFS](#bfs)
+  * [BFS vs DFS](#bfs-vs-dfs)
+  * [BFS and DFS implementation](#bfs-and-dfs-implementation)
+- [Informed search algorithms](#informed-search-algorithms)
+  * [Evaluation function](#evaluation-function)
+  * [Manhattan Distance](#manhattan-distance)
+  * [GBFS](#gbfs)
+  * [A* Search](#a--search)
+- [Minimax algorithm](#minimax-algorithm)
+  * [Implementation](#implementation-1)
+  * [Depth-limited minimax](#depth-limited-minimax)
+  * [Alpha-beta pruning](#alpha-beta-pruning)
+
 A search problem is one where given an environment that an agent is in, we would like the agent to be able to somehow look for a solution to that problem. A search problem comes in many forms, common examples include:
 
 * 15 puzzle with sliding tiles
