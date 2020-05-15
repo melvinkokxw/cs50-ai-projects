@@ -120,3 +120,52 @@ General equation for random variables:
 
 I.e. the probability that some random variable `X` is equal to <code>x<sub>i</sub></code> is the sum of the probabilities of <code>X = x<sub>i</sub></code> given <code>Y = y<sub>j</sub></code> for all `j`, assuming <code>Y = y<sub>j</sub></code> is true.
 
+## Bayesian network
+
+A Bayesian network is a data structure that represents the dependencies among random variables.
+
+* Directed graph
+* Each node represents a random variable
+* Arrow from X to Y means X is a parent of Y
+* Each node has a probability distribution `P(X|Parents(X))`
+
+# Inference
+
+* Query `X`: variable for which to compute distribution
+* Evidence variables `E`: observed variables for event `e`
+* Hidden variables `Y`: non-evidence, non-query variable.
+* Goal: Calculate `P(X|e)`
+
+## Inference by enumeration
+
+Inference by enumeration uses the probability theorem's rules and properties such as [marginalization](#marginalization) to find the probability of our query variable given the evidence. The formula for that is:
+
+![P(\textit{X}{\mid}\textit{e}) = {\alpha}P(\textit{X}, \textit{e}) = {\alpha} \displaystyle\sum_{y}P(\textit{X}, \textit{e}, \textit{y})](https://render.githubusercontent.com/render/math?math=P(%5Ctextit%7BX%7D%7B%5Cmid%7D%5Ctextit%7Be%7D)%20%3D%20%7B%5Calpha%7DP(%5Ctextit%7BX%7D%2C%20%5Ctextit%7Be%7D)%20%3D%20%7B%5Calpha%7D%20%5Cdisplaystyle%5Csum_%7By%7DP(%5Ctextit%7BX%7D%2C%20%5Ctextit%7Be%7D%2C%20%5Ctextit%7By%7D))
+
+where
+* `X` is the query variable
+* `e` is the evidence
+* `y` ranges over values of hidden variables
+* `α` normalizes the result
+
+This can be abstracted over and done using a Python library, such as `pomegranate`.
+
+# Appproximate inference
+
+Approximate inference refers to the concept of using a method to approximate the inference instead of using a computational method like [inference by enumeration](#inference-by-enumeration). This reduces the time it takes to perform the calculation, especially as the number of variables get larger. Though this method will give less accurate inferences, it is often sufficient when dealing with probabilities.
+
+## Sampling
+
+Sampling is the method by which we obtain multiple samples of all of the variables in the Bayesian network. With a sufficiently large number of samples, we can determine the unconditional probability of the query, `P(X)`
+
+## Rejection sampling
+
+Rejection sampling is a method similar to sampling, but we only use the samples where the evidence matches the scenario we want and reject the rest. This gives us the conditional probability of the query, given the evidence, `P(X|e)`
+
+## Likelihood weighting
+
+Likelihood weighting solves the problem where if we use rejection sampling with an evidence variable that has a small probability of giving the value we want to use, we would be rejecting a large amount of samples, making the method inefficient. 
+
+Likehood weighting starts by fixing the values for evidence variables. We then sample the non-evidence variables using conditional probabilities in the Bayesian Network.
+Lastly we weight each sample by its likelihood: the probability of all of the evidence
+
