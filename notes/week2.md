@@ -18,7 +18,7 @@ Conditional probability is the degree of belief in a proposition given some evid
 
 An example of conditional probability is `P(a|b)`. `P(a|b)` represents that probability of `a` given `b` is true. The calculation is given by:
 
-![P(\textit{a}|\textit{b}) = \frac{P(a \land b)}{P(b)}](https://render.githubusercontent.com/render/math?math=P(%5Ctextit%7Ba%7D%7C%5Ctextit%7Bb%7D)%20%3D%20%5Cfrac%7BP(a%20%5Cland%20b)%7D%7BP(b)%7D)
+![P(\textit{a}{\mid}\textit{b}) = \frac{P(a \land b)}{P(b)}](https://render.githubusercontent.com/render/math?math=P(%5Ctextit%7Ba%7D%7B%5Cmid%7D%5Ctextit%7Bb%7D)%20%3D%20%5Cfrac%7BP(a%20%5Cland%20b)%7D%7BP(b)%7D)
 
 which can also be expressed as
 
@@ -62,7 +62,7 @@ P(a∧b) = P(a)P(b)
 
 From `P(a∧b) = P(a)P(b|a)` and `P(a∧b) = P(b)P(a|b)`, we can get `P(a)P(b|a) = P(b)P(a|b)`. Rearranging the terms, we get:
 
-![P(\textit{b} | \textit{a}) = \frac{P(\textit{a}|\textit{b})P(\textit{b})}{P(\textit{a})}](https://render.githubusercontent.com/render/math?math=P(%5Ctextit%7Bb%7D%20%7C%20%5Ctextit%7Ba%7D)%20%3D%20%5Cfrac%7BP(%5Ctextit%7Ba%7D%7C%5Ctextit%7Bb%7D)P(%5Ctextit%7Bb%7D)%7D%7BP(%5Ctextit%7Ba%7D)%7D)
+![P(\textit{b}{\mid}\textit{a}) = \frac{P(\textit{a}{\mid}\textit{b})P(\textit{b})}{P(\textit{a})}](https://render.githubusercontent.com/render/math?math=P(%5Ctextit%7Bb%7D%7B%5Cmid%7D%5Ctextit%7Ba%7D)%20%3D%20%5Cfrac%7BP(%5Ctextit%7Ba%7D%7B%5Cmid%7D%5Ctextit%7Bb%7D)P(%5Ctextit%7Bb%7D)%7D%7BP(%5Ctextit%7Ba%7D)%7D)
 
 Using Bayes' Rule, we can get the probability of `b` given `a` if we have the "reverse" conditional probability of `a` given `b`
 
@@ -116,7 +116,7 @@ This can be derived from the [marginalization](#marginalization) equation and th
 
 General equation for random variables:
 
-![P(\textit{X} = \textit{x_{i}}) = \displaystyle\sum_{j}P(\textit{X} = \textit{x_{i}} | \textit{Y} = \textit{y_{j}})P(\textit{Y} = \textit{y_{j}})](https://render.githubusercontent.com/render/math?math=P(%5Ctextit%7BX%7D%20%3D%20%5Ctextit%7Bx_%7Bi%7D%7D)%20%3D%20%5Cdisplaystyle%5Csum_%7Bj%7DP(%5Ctextit%7BX%7D%20%3D%20%5Ctextit%7Bx_%7Bi%7D%7D%20%7C%20%5Ctextit%7BY%7D%20%3D%20%5Ctextit%7By_%7Bj%7D%7D)P(%5Ctextit%7BY%7D%20%3D%20%5Ctextit%7By_%7Bj%7D%7D))
+![P(\textit{X} = \textit{x_{i}}) = \displaystyle\sum_{j}P(\textit{X} = \textit{x_{i}}{\mid}\textit{Y} = \textit{y_{j}})P(\textit{Y} = \textit{y_{j}})](https://render.githubusercontent.com/render/math?math=P(%5Ctextit%7BX%7D%20%3D%20%5Ctextit%7Bx_%7Bi%7D%7D)%20%3D%20%5Cdisplaystyle%5Csum_%7Bj%7DP(%5Ctextit%7BX%7D%20%3D%20%5Ctextit%7Bx_%7Bi%7D%7D%7B%5Cmid%7D%5Ctextit%7BY%7D%20%3D%20%5Ctextit%7By_%7Bj%7D%7D)P(%5Ctextit%7BY%7D%20%3D%20%5Ctextit%7By_%7Bj%7D%7D))
 
 I.e. the probability that some random variable `X` is equal to <code>x<sub>i</sub></code> is the sum of the probabilities of <code>X = x<sub>i</sub></code> given <code>Y = y<sub>j</sub></code> for all `j`, assuming <code>Y = y<sub>j</sub></code> is true.
 
