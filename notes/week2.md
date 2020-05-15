@@ -169,3 +169,11 @@ Likelihood weighting solves the problem where if we use rejection sampling with 
 Likehood weighting starts by fixing the values for evidence variables. We then sample the non-evidence variables using conditional probabilities in the Bayesian Network.
 Lastly we weight each sample by its likelihood: the probability of all of the evidence
 
+## Markov assumption
+
+The assumption that the current state depends on only  a finite fixed number of previous states
+
+## Markov chain
+
+A sequence of random variables where the distribution of each variable follows the Markov assumption
+
