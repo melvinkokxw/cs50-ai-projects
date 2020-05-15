@@ -22,11 +22,15 @@ An example of conditional probability is `P(a|b)`. `P(a|b)` represents that prob
 
 which can also be expressed as
 
-`P(a∧b) = P(a)P(b|a)`
+```
+P(a∧b) = P(a)P(b|a)
+```
 
 or
 
-`P(a∧b) = P(b)P(a|b)`
+```
+P(a∧b) = P(b)P(a|b)
+```
 
 ## Random variable
 
@@ -50,7 +54,9 @@ but we will have to know the order in which the probabilities are arranged.
 
 Independance refers to the knowledge that one event occurs does not affect the probability of the other event, i.e. one event does not influence another. Independence is represented mathematically with:
 
-`P(a∧b) = P(a)P(b)`
+```
+P(a∧b) = P(a)P(b)
+```
 
 ## Bayes' Rule
 
@@ -58,19 +64,23 @@ From `P(a∧b) = P(a)P(b|a)` and `P(a∧b) = P(b)P(a|b)`, we can get `P(a)P(b|a)
 
 ![P(\textit{b} | \textit{a}) = \frac{P(\textit{a}|\textit{b})P(\textit{b})}{P(\textit{a})}](https://render.githubusercontent.com/render/math?math=P(%5Ctextit%7Bb%7D%20%7C%20%5Ctextit%7Ba%7D)%20%3D%20%5Cfrac%7BP(%5Ctextit%7Ba%7D%7C%5Ctextit%7Bb%7D)P(%5Ctextit%7Bb%7D)%7D%7BP(%5Ctextit%7Ba%7D)%7D)
 
-using Bayes' Rule, we can get the probability of `b` given `a` if we have the "reverse" conditional probability of `a` given `b`
+Using Bayes' Rule, we can get the probability of `b` given `a` if we have the "reverse" conditional probability of `a` given `b`
 
 ## Negation
 
 The probability of an event not occuring is equal to 1 minus the probability of the event happening, i.e.
 
-`P(¬a) = 1 P(a)`
+```
+P(¬a) = 1 P(a)
+```
 
 ## Inclusion-Exclusion
 
 Given two events `a` and `b`, the probably that either `a` or `b` occurs is given by:
 
-`P(a∨b) = P(a) + P(b) - P(a∧b)`
+```
+P(a∨b) = P(a) + P(b) - P(a∧b)
+```
 
 Simply adding `P(a)` and `P(b)` causes double counting, which is which is why we have to exclude `P(a∧b)`.
 
@@ -80,7 +90,9 @@ The probability of `a` is the sum of:
 * The probability of both `a`  and `b` occuring
 * The probability of `a` occuring and `b` not occuring, i.e.
 
-`P(a) = P(a,b) + P(a,¬b)`
+```
+P(a) = P(a,b) + P(a,¬b)
+```
 
 For random variables, a more general equation would be:
 
@@ -96,7 +108,9 @@ The probability of `a` is the sum of:
 
 In mathematical terms:
 
-`P(a) = P(a|b)P(b) + P(a|¬b)P(¬b)`
+```
+P(a) = P(a|b)P(b) + P(a|¬b)P(¬b)
+```
 
 This can be derived from the [marginalization](#marginalization) equation and the basic [conditional probability](#conditional-probability) equation
 
