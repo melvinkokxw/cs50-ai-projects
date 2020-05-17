@@ -1,5 +1,25 @@
 # Week 2: Uncertainty
 
+- [Probability](#probability)
+  * [Unconditional probability](#unconditional-probability)
+  * [Conditional probability](#conditional-probability)
+  * [Random variable](#random-variable)
+  * [Independance](#independance)
+  * [Bayes' Rule](#bayes--rule)
+  * [Negation](#negation)
+  * [Inclusion-Exclusion](#inclusion-exclusion)
+  * [Marginalization](#marginalization)
+  * [Conditioning](#conditioning)
+  * [Bayesian network](#bayesian-network)
+- [Inference](#inference)
+  * [Inference by enumeration](#inference-by-enumeration)
+- [Appproximate inference](#appproximate-inference)
+  * [Sampling](#sampling)
+  * [Rejection sampling](#rejection-sampling)
+  * [Likelihood weighting](#likelihood-weighting)
+  * [Markov assumption](#markov-assumption)
+  * [Markov chain](#markov-chain)
+
 Often we deal with uncertainty when we implement AIs. While the AI may not be certain about an event, it likely has access to the probabilities of the events occuring.
 
 # Probability
