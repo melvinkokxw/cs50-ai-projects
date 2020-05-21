@@ -138,9 +138,9 @@ For ensuring arc consistency for all nodes:
     remove {<i>var</i> = <i>value</i>} from <i>assignment</i>
   return <i>failure</i></code></pre>
 
-By interleaving maintaining arc consistency with the backtracking search algorithm, we can increase the efficiency of the search.
-
 ### Backtracking search with arc consistency
+
+By interleaving maintaining arc consistency with the backtracking search algorithm, we can increase the efficiency of the search:
 
 <pre><code>function BACKTRACK(<i>assignment</i>, <i>csp</i>):
   if <i>assignment</i> complete:
@@ -158,12 +158,16 @@ By interleaving maintaining arc consistency with the backtracking search algorit
     remove {<i>var</i> = <i>value</i>} and <i>inferences</i> from <i>assignment</i>
   return <i>failure</i></code></pre>
 
+Although interleaving the AC3 algorithm with backtracking search can increase efficiency by pruning search branches that are likely to fail, calling the AC3 function still has a time cost associated and may slow down the search in some usecases.
+
 ### Selecting unassigned variable
 
-We can use heuristics to better determine which variable to assign a value to next.
+We can use heuristics to better determine which variable to assign a value to next. Two such heuristics are:
 
 * Minimum remaining values (MRV) heuristic: select the variable that hs the smallest domain
 * Degree heuristic: select the variable that has the highest degree
+
+We can combine them by using one as the primary sorting key and the other as the secondary sorting key.
 
 ### Selecting value in domain
 
