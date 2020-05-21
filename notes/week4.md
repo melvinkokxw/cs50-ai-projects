@@ -56,9 +56,7 @@ L(actual, predicted) = |actual - predicted|
 
 ### L<sub>2</sub> loss function
 
-<code>
-L(actual, predicted) = (actual - predicted)<sup>2</sup>
-</code>
+<pre><code>L(actual, predicted) = (actual - predicted)<sup>2</sup></code></pre>
 
 ## Overfitting
 
