@@ -16,6 +16,16 @@
   - [Convolution neural network](#convolution-neural-network)
   - [Feed-forward neural network](#feed-forward-neural-network)
   - [Recurrent neural network](#recurrent-neural-network)
+- [Adjustments to Keras model](#adjustments-to-keras-model)
+  - [Different numbers of convolutional and pooling layers](#different-numbers-of-convolutional-and-pooling-layers)
+    - [Number of convolution layers](#number-of-convolution-layers)
+    - [Number of pooling layers](#number-of-pooling-layers)
+  - [Different numbers and sizes of filters for convolutional layers](#different-numbers-and-sizes-of-filters-for-convolutional-layers)
+    - [Number of filters](#number-of-filters)
+    - [Sizes of filters](#sizes-of-filters)
+  - [Different pool sizes for pooling layers](#different-pool-sizes-for-pooling-layers)
+  - [Different numbers and sizes of hidden layers](#different-numbers-and-sizes-of-hidden-layers)
+  - [Dropout](#dropout-1)
 
 # Artificial neural networks
 
@@ -116,3 +126,43 @@ Neural network that has connections only in one direction
 
 Neural network that generates output that
 feeds back into its own inputs
+
+# Adjustments to Keras model
+
+By changing the number of layers and the types of layers in the Keras, I got different results from the project5 traffic data.
+
+## Different numbers of convolutional and pooling layers
+
+This was testing by varying the number of layers from 0-2.
+
+### Number of convolution layers
+
+Increasing the number of convolution layers increases the accuracy and reduces the loss of the model. However, each layer adds to the amount of time required to train the model as well as the computational power required.
+
+### Number of pooling layers
+
+Increasing the number of pooling layers decreases the time required to train the model, but decreases the accuracy of the model.
+
+## Different numbers and sizes of filters for convolutional layers
+
+The effect of number of filters was tested with 1, 16 and 32 filters. The effect of sizes of filters was tested with 3x3, 5x5 and 7x7.
+
+### Number of filters
+
+Increasing the number of filters from 1 to 16 increases the accuracy of the model. However, increasing from 16 to 32 filters had little effect on the accuracy of the model, while increasing the amount of time required to run significantly (2x).
+
+### Sizes of filters
+
+Using small sized filters generally increases accuracy, though larger sized filters can be used to learn larger features on larger images.
+
+## Different pool sizes for pooling layers
+
+Increasing pool size has a similar effect to increasing number of pool layers – decreasing amount of time taken to fit the model but also decreasing accuracy.
+
+## Different numbers and sizes of hidden layers
+
+Only using one hidden layer significantly reduced accuracy and increased loss. However, continuing to add hidden layers increases the accuracy and decreases the loss, eventually reaching better results than without hidden layers.
+
+## Dropout
+
+Dropout reduces the effect of overfitting.
