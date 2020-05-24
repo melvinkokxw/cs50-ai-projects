@@ -90,10 +90,10 @@ def np_chunk(tree):
         if subtree.height() == 2:
             return subtree.label() == "NP"
         # Recursively search subtrees, except itself
-        for subtree in sub.subtrees(lambda t: t != sub):
-            if subtree.label() == "NP":
+        for sub in subtree.subtrees(lambda t: t != subtree):
+            if sub.label() == "NP":
                 return True
-            if search_np(subtree):
+            if search_np(sub):
                 return True
         return False
 
