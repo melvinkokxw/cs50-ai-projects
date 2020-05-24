@@ -117,7 +117,7 @@ Measure of how common or rare a word is across documents
 
 ## TF-IDF
 
-Rankinf of what words are important in a document by multiplying [term frequency](#term-frequency)(TF) by [inverse document frequency](#inverse-document-frequency)(IDF)
+Ranking of what words are important in a document by multiplying [term frequency](#term-frequency)(TF) by [inverse document frequency](#inverse-document-frequency)(IDF)
 
 # Semantics
 
